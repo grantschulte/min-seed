@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+yarn;
+yarn build:client;
+yarn build:server;
+yarn server:prod;

@@ -1,0 +1,67 @@
+{
+  "name": "min-seed",
+  "version": "0.0.1",
+  "description": "A minimal Express and Webpack seed.",
+  "main": "server.js",
+  "scripts": {
+    "build:server": "./node_modules/.bin/babel ./src -d ./build",
+    "build:client": "./node_modules/.bin/webpack --env=production",
+    "clean": "echo \"cleaning task goes here\"",
+    "server:dev": "NODE_ENV=development nodemon ./src/server.js --exec babel-node",
+    "server:prod": "NODE_ENV=production node ./build/server.js",
+    "setup": "./bin/setup",
+    "test": "./node_modules/.bin/mocha --require babel-core/register --exit",
+    "watch": "./node_modules/.bin/webpack --watch --env=development",
+    "webpack": "./node_modules/.bin/webpack --env=development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grantschulte/min-seed.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "webpack",
+    "seed",
+    "starter"
+  ],
+  "author": "Grant J. Schulte <schulte.grant@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "autoprefixer": "7.1.6",
+    "babel-cli": "6.26.0",
+    "babel-core": "6.26.0",
+    "babel-loader": "7.1.2",
+    "babel-preset-es2015": "6.24.1",
+    "body-parser": "1.18.2",
+    "cookie-parser": "1.4.3",
+    "copy": "0.3.1",
+    "copy-webpack-plugin": "4.2.1",
+    "css-loader": "0.28.7",
+    "dotenv": "4.0.0",
+    "express": "4.16.2",
+    "extract-text-webpack-plugin": "3.0.2",
+    "file-loader": "1.1.5",
+    "imagemin-webpack-plugin": "1.5.2",
+    "morgan": "1.9.0",
+    "node-sass": "4.7.1",
+    "postcss-clean": "1.1.0",
+    "postcss-loader": "2.0.8",
+    "pug": "2.0.0-rc.4",
+    "sass-loader": "6.0.6",
+    "style-loader": "0.19.0",
+    "uglifyjs-webpack-plugin": "1.1.0",
+    "url-loader": "0.6.2",
+    "webpack": "3.8.1",
+    "winston": "2.4.0"
+  },
+  "devDependencies": {
+    "babel-preset-stage-2": "6.24.1",
+    "eslint": "4.11.0",
+    "mocha": "4.0.1",
+    "webpack-merge": "4.1.1"
+  },
+  "engines": {
+    "node": "8.9.0"
+  }
+}
