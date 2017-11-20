@@ -1,14 +1,15 @@
 import path from "path";
 import webpack from "webpack";
+import { dirs, wpConfig } from "./src/config";
 
 import ExtractTextPlugin from "extract-text-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
 import UglifyWebpackPlugin from "uglifyjs-webpack-plugin";
 import { default as ImageminPlugin } from "imagemin-webpack-plugin";
 
-import { config, dirs } from "./src/config";
-
 module.exports = (env) => {
+  const envVars = wpConfig(env);
+
   return {
     entry: {
       "app": [
@@ -81,12 +82,8 @@ module.exports = (env) => {
       ]
     },
 
-  	plugins: [
-      new webpack.DefinePlugin({
-        "process.env": {
-          "NODE_ENV": JSON.stringify(process.env.NODE_ENV)
-        }
-      }),
+    plugins: [
+      new webpack.DefinePlugin(envVars),
       new ExtractTextPlugin({
         filename: "styles/[name].css"
       }),
@@ -106,12 +103,12 @@ module.exports = (env) => {
       new ImageminPlugin({
         test: /\.(jpe?g|png|gif|svg)$/i
       })
-  	],
+    ],
 
     devtool: "source-map",
 
     stats: {
-  		colors: true
-  	}
+      colors: true
+    }
   };
 };

@@ -1,5 +1,7 @@
 import path from "path";
 import dotenv from "dotenv";
+import wpConfig from "./wp-config";
+
 dotenv.load();
 
 const config = {
@@ -23,5 +25,6 @@ const viewEngine = "pug";
 export {
   config,
   dirs,
-  viewEngine
+  viewEngine,
+  wpConfig
 };

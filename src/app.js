@@ -3,7 +3,7 @@ import morgan from "morgan";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 
-import { config, dirs, viewEngine } from "./config";
+import { dirs, viewEngine } from "./config";
 import { router as publicRoutes } from "./routes/public";
 
 const app = express();
