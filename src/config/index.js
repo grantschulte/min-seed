@@ -13,9 +13,9 @@ const config = {
 const dirs = {
   src:    path.join(__dirname, ".."),
   views:  path.join(__dirname, "..", "views"),
+  assets: path.join(__dirname, "..", "assets"),
   public: path.join(__dirname, "..", "..", "public"),
   dist:   path.join(__dirname, "..", "..", "dist"),
-  client: path.join(__dirname, "..", "..", "client"),
   test:   path.join(__dirname, "..", "..", "test"),
   bin:    path.join(__dirname, "..", "..", "bin")
 };

@@ -13,7 +13,7 @@ module.exports = (env) => {
   return {
     entry: {
       "app": [
-        path.join(dirs.client, "index.js")
+        path.join(dirs.assets, "index.js")
       ]
     },
 
@@ -89,12 +89,12 @@ module.exports = (env) => {
       }),
       new CopyWebpackPlugin([
         {
-          from: `${dirs.client}/images/**/*`,
+          from: `${dirs.assets}/images/**/*`,
           to: `${dirs.public}/images`,
           flatten: true
         },
         {
-          from: `${dirs.client}/fonts/**/*`,
+          from: `${dirs.assets}/fonts/**/*`,
           to: `${dirs.public}/fonts`,
           flatten: true
         }

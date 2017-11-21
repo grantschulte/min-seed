@@ -1,17 +1,32 @@
+# Logs
+
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
 # System
 
 .DS_Store
 
-# DB
+# Redis dump
 
 dump.rdb
 
 # Node
 
 node_modules
+
+# dotenv environment vars
+
 .env
 
 # Build
 
 public
 dist
+
+# Optional eslint cache
+
+.eslintcache
