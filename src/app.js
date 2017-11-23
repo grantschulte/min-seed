@@ -5,6 +5,7 @@ import cookieParser from "cookie-parser";
 
 import { dirs, viewEngine } from "./config";
 import { router as publicRoutes } from "./routes/public";
+import * as errors from "./middleware/errors";
 
 const app = express();
 
@@ -16,17 +17,26 @@ app
 // Middleware
 
 app
-  .use(morgan("dev"))
+  .use(morgan("tiny"))
   .use(bodyParser.json())
   .use(bodyParser.urlencoded({ extended: true }))
   .use(cookieParser())
   .use(express.static(dirs.public));
 
-
 // Routes
 
-app.use("/", publicRoutes);
+app
+  .use("/", publicRoutes)
+  .use("*", (req, res) => {
+    res
+      .status(404)
+      .render("404");
+  });
 
 // Error Handling
+
+app
+  .use(errors.log)
+  .use(errors.server);
 
 export default app;

@@ -26,6 +26,7 @@ gulp.task("public", () => {
 gulp.task("watch", function() {
   livereload.listen();
   gulp.watch("./src/views/**/*.pug", ["pug"]);
+  gulp.watch("./src/**/*.js", ["babel"]);
   gulp.watch("./public/**", ["public"]);
 });
 
@@ -37,7 +38,6 @@ gulp.task("server",function(){
 });
 
 gulp.task("serve", [
-  "babel",
   "server",
   "watch"
 ]);
