@@ -10,17 +10,19 @@ const config = {
   port: process.env.SERVER_PORT
 };
 
-const dirs = {
-  src:    path.join(__dirname, ".."),
-  views:  path.join(__dirname, "..", "views"),
-  assets: path.join(__dirname, "..", "assets"),
-  public: path.join(__dirname, "..", "..", "public"),
-  dist:   path.join(__dirname, "..", "..", "dist"),
-  test:   path.join(__dirname, "..", "..", "test"),
-  bin:    path.join(__dirname, "..", "..", "bin")
-};
-
+const rootDir = process.cwd();
 const viewEngine = "pug";
+
+const dirs = {
+  root:   rootDir,
+  src:    path.join(rootDir, "src"),
+  views:  path.join(rootDir, "src", "views"),
+  assets: path.join(rootDir, "src", "assets"),
+  public: path.join(rootDir, "public"),
+  dist:   path.join(rootDir, "dist"),
+  test:   path.join(rootDir, "test"),
+  bin:    path.join(rootDir, "bin")
+};
 
 export {
   config,
