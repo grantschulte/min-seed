@@ -1,6 +1,7 @@
 const gulp = require("gulp");
 const babel = require("gulp-babel");
 const nodemon = require("gulp-nodemon");
+const eslint = require("gulp-eslint");
 const livereload = require("gulp-livereload");
 const dest = require("gulp-dest");
 
@@ -23,14 +24,22 @@ gulp.task("public", () => {
     .pipe(livereload());
 });
 
-gulp.task("watch", function() {
+gulp.task("lint", () => {
+  return gulp.src("./src/**/*.js")
+    .pipe(eslint({
+      configFile: "./.eslintrc.json"
+    }))
+    .pipe(eslint.format());
+});
+
+gulp.task("watch", () => {
   livereload.listen();
   gulp.watch("./src/views/**/*.pug", ["pug"]);
-  gulp.watch("./src/**/*.js", ["babel"]);
+  gulp.watch("./src/**/*.js", ["lint", "babel"]);
   gulp.watch("./public/**", ["public"]);
 });
 
-gulp.task("server",function(){
+gulp.task("server", () => {
   nodemon({
     "script": "./dist/server.js",
     "ignore": ["./dist", "./test", "./public", "./src/assets"]

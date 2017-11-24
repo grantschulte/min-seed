@@ -10,7 +10,7 @@
     "build:client:dev": "./node_modules/.bin/webpack --env=development",
     "build:client:prod": "./node_modules/.bin/webpack --env=production",
     "clean": "rm -rf ./public && rm -rf ./dist",
-    "lint": "./node_modules/.bin/eslint .",
+    "lint": "./node_modules/.bin/eslint ./src",
     "serve:dev": "NODE_ENV=development gulp serve",
     "serve:prod": "NODE_ENV=production node ./dist/server.js",
     "test": "./node_modules/.bin/mocha --require babel-core/register --exit",
@@ -65,6 +65,7 @@
   },
   "devDependencies": {
     "eslint": "4.11.0",
+    "gulp-eslint": "4.0.0",
     "mocha": "4.0.1"
   },
   "engines": {

@@ -6,19 +6,17 @@ html
     
     block style
       link(rel="stylesheet", href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css")
+      link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
       link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,700")
       link(rel="stylesheet", href="./styles/app.css")
   
-  body(class=bodyClass)
+  body(class="body-")
     div#site-wrapper
-      //- include header
+      include header
       
-      div(
-        id="page-wrapper",
-        class="p2"
-        )
+      div#page-wrapper
         block content
-        //- include footer
+        include footer
         
     block scripts
       script(src="./scripts/app.js")

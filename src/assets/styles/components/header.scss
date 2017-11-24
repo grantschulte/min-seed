@@ -1,12 +1,11 @@
 #header {
   background-color: $color-white;
-  height: $headerHeight;
+  height: $header-height;
 
   .container {
     height: 100%;
     display: flex;
     flex-flow: wrap;
-    justify-content: center;
     align-items: center;
   }
 
@@ -23,6 +22,10 @@
   }
 
   &__actions {
+    #menu-icon {
+      font-size: 32px;
+    }
+
     .btn {
       margin-left: 0.75em;
     }

@@ -5,7 +5,7 @@ function log(err, req, res, next) {
   next(err);
 }
 
-function server(err, req, res, next) {
+function server(err, req, res) {
   err = config.env === "production"
     ? {}
     : err;
@@ -20,4 +20,4 @@ function server(err, req, res, next) {
 export {
   log,
   server
-}
+};
