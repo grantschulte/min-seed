@@ -54,29 +54,34 @@ To enable live reloading in your browser when the server and/or asset files chan
 To begin development, clone the project and install the dependencies:
 
 ```
-yarn```
+yarn
+```
 
 Run serve:dev to watch and and restart the server automatically:
 
 ```
-yarn serve:dev```
+yarn serve:dev
+```
 
 Run webpack:watch to watch and process assets:
 
 ```
-yarn webpack:watch```
+yarn webpack:watch
+```
 
 ## Build
 
 To build the server and assets on a production server run:
 
 ```
-yarn build```
+yarn build
+```
 
 Then run the production server:
 
 ```
-yarn serve:prod```
+yarn serve:prod
+```
 
 ## Directory Structure
 ```
