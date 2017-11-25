@@ -1,6 +1,6 @@
 {
   "name": "min-seed",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A minimal Node web app starter with Express, Webpack, and Gulp.",
   "main": "./build/server.js",
   "scripts": {
