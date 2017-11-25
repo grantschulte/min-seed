@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
-yarn;
-yarn build:prod;
-yarn serve:prod;
+# Install dependencies
+
+npm install
+
+# Build server and assets
+
+npm run build
+
+# Start server
+
+npm run start:prod

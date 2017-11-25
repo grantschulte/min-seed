@@ -10,7 +10,7 @@ import * as errors from "./middleware/errors";
 const app = express();
 
 app
-  .set("views", dirs.views)
+  .set("views", dirs.build.views)
   .set("view engine", viewEngine)
   .set("json spaces", 2);
 
@@ -21,7 +21,7 @@ app
   .use(bodyParser.json())
   .use(bodyParser.urlencoded({ extended: true }))
   .use(cookieParser())
-  .use(express.static(dirs.public));
+  .use(express.static(dirs.build.public));
 
 // Routes
 

@@ -8,17 +8,18 @@ import UglifyWebpackPlugin from "uglifyjs-webpack-plugin";
 import { default as ImageminPlugin } from "imagemin-webpack-plugin";
 
 module.exports = (env) => {
-  const envVars = wpConfig(env);
+  const envVars = wpConfig(process.env.NODE_ENV);
+  console.log("WEBPACK ENV", process.env.NODE_ENV);
 
   return {
     entry: {
       "app": [
-        path.join(dirs.assets, "index.js")
+        path.join(dirs.src.assets, "index.js")
       ]
     },
 
     output: {
-      path: dirs.public,
+      path: dirs.build.public,
       filename: "scripts/[name].js",
       publicPath: "/"
     },
@@ -89,13 +90,13 @@ module.exports = (env) => {
       }),
       new CopyWebpackPlugin([
         {
-          from: `${dirs.assets}/images/**/*`,
-          to: `${dirs.public}/images`,
+          from: `${dirs.src.assets}/images/**/*`,
+          to: `${dirs.build.public}/images`,
           flatten: true
         },
         {
-          from: `${dirs.assets}/fonts/**/*`,
-          to: `${dirs.public}/fonts`,
+          from: `${dirs.src.assets}/fonts/**/*`,
+          to: `${dirs.build.public}/fonts`,
           flatten: true
         }
       ]),

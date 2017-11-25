@@ -1,6 +1,7 @@
 #header {
   background-color: $color-white;
   height: $header-height;
+  border-bottom: 1px solid #DDD;
 
   .container {
     height: 100%;
@@ -22,6 +23,8 @@
   }
 
   &__actions {
+    height: 32px;
+    
     #menu-icon {
       font-size: 32px;
     }

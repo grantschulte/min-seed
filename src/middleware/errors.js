@@ -5,7 +5,7 @@ function log(err, req, res, next) {
   next(err);
 }
 
-function server(err, req, res) {
+function server(err, req, res, next) {
   err = config.env === "production"
     ? {}
     : err;
@@ -13,6 +13,7 @@ function server(err, req, res) {
   res.status(500);
   res.render("error", {
     message: err.message,
+    status: 500,
     error: err
   });
 }

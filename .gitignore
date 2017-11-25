@@ -26,6 +26,7 @@ node_modules
 
 public
 dist
+build
 
 # Optional eslint cache
 

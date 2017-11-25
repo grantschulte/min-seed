@@ -11,18 +11,25 @@ const config = {
 };
 
 const rootDir = process.cwd();
-const viewEngine = "pug";
 
 const dirs = {
-  root:   rootDir,
-  src:    path.join(rootDir, "src"),
-  views:  path.join(rootDir, "src", "views"),
-  assets: path.join(rootDir, "src", "assets"),
-  public: path.join(rootDir, "public"),
-  dist:   path.join(rootDir, "dist"),
-  test:   path.join(rootDir, "test"),
-  bin:    path.join(rootDir, "bin")
+  root: rootDir,
+  src: {
+    root:     path.join(rootDir, "src"),
+    views:    path.join(rootDir, "src", "views"),
+    assets:   path.join(rootDir, "src", "assets")
+  },
+  build: {
+    root:     path.join(rootDir, "build"),
+    public:   path.join(rootDir, "build", "public"),
+    server:   path.join(rootDir, "build", "server"),
+    views:    path.join(rootDir, "build", "server", "views")
+  },
+  test: path.join(rootDir, "test"),
+  bin:  path.join(rootDir, "bin")
 };
+
+const viewEngine = "pug";
 
 export {
   config,

@@ -1,5 +1,4 @@
 node_modules
-public
 bin
 test
-dist
+build
