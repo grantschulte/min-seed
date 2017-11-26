@@ -57,10 +57,10 @@ To begin development, clone the project and install the dependencies:
 yarn
 ```
 
-Run serve:dev to watch and and restart the server automatically:
+Run start:dev to watch and and restart the server automatically:
 
 ```
-yarn serve:dev
+yarn start:dev
 ```
 
 Run webpack:watch to watch and process assets:
@@ -80,7 +80,7 @@ yarn build
 Then run the production server:
 
 ```
-yarn serve:prod
+yarn start:prod
 ```
 
 ## Test
