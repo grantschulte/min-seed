@@ -10,7 +10,7 @@
     "lint": "./node_modules/.bin/eslint ./src",
     "start:dev": "yarn build:dev && NODE_ENV=development gulp serve",
     "start:prod": "NODE_ENV=production node ./build/server/server.js",
-    "test": "NODE_ENV=test ./node_modules/.bin/mocha --require babel-core/register --exit --colors ./test/**/*.js",
+    "test": "NODE_ENV=test ./node_modules/.bin/mocha --require babel-core/register --exit --colors ./test/**",
     "webpack:dev": "./node_modules/.bin/webpack --env=development",
     "webpack:prod": "./node_modules/.bin/webpack --env=production",
     "webpack:watch": "./node_modules/.bin/webpack --watch --env=development"

@@ -4,7 +4,6 @@ import wpConfig from "./wp-config";
 
 dotenv.load();
 
-
 const rootDir = process.cwd();
 const viewEngine = "pug";
 
