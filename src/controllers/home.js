@@ -1,5 +1,5 @@
 function get(req, res) {
-  res.render("home", {
+  res.render("pages/home", {
     title: "Home"
   });
 }
