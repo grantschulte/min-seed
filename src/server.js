@@ -5,7 +5,7 @@ import { logServerConfig } from "./utils/logger";
 
 const server = http.createServer(app);
 
-app.set("port", config.port);
+// Start server and log config.
 
 server.listen(config.port, config.host, (err) => {
   logServerConfig(err);

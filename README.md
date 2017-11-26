@@ -83,6 +83,14 @@ Then run the production server:
 yarn serve:prod
 ```
 
+## Test
+
+Mocha and Chai are used for unit testing:
+
+```
+yarn test
+```
+
 ## Directory Structure
 ```
 .

@@ -10,6 +10,11 @@ const config = {
   port: process.env.SERVER_PORT
 };
 
+if (process.env.NODE_ENV === "test") {
+  config.env = "test";
+  config.port = 3001;
+}
+
 const rootDir = process.cwd();
 
 const dirs = {

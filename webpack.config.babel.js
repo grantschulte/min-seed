@@ -1,6 +1,6 @@
 import path from "path";
 import webpack from "webpack";
-import { dirs, wpConfig } from "./src/config";
+import { dirs, wpConfig, config } from "./src/config";
 
 import ExtractTextPlugin from "extract-text-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
@@ -8,8 +8,15 @@ import UglifyWebpackPlugin from "uglifyjs-webpack-plugin";
 import { default as ImageminPlugin } from "imagemin-webpack-plugin";
 
 module.exports = (env) => {
-  const envVars = wpConfig(process.env.NODE_ENV);
-  console.log("WEBPACK ENV", process.env.NODE_ENV);
+
+  // Get environment specifc env vars. Alternatively, you
+  // can use the env variable passed into this module via
+  // the webpack cli call. At this time, we're using the
+  // applications config env variable set by .env:
+
+  const envVars = wpConfig(config.env);
+
+  // Return webpack config object:
 
   return {
     entry: {

@@ -1,11 +1,8 @@
 import express from "express";
+import * as controllers from "../controllers";
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.render("home", {
-    title: "Home"
-  });
-});
+router.get("/", controllers.home.get);
 
 export { router };

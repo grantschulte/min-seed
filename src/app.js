@@ -3,13 +3,15 @@ import morgan from "morgan";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 
-import { dirs, viewEngine } from "./config";
+import { dirs, viewEngine, config } from "./config";
 import { router as publicRoutes } from "./routes/public";
+import { router as redirectRoutes } from "./routes/redirects";
 import * as errors from "./middleware/errors";
 
 const app = express();
 
 app
+  .set("port", process.env.PORT || config.port)
   .set("views", dirs.build.views)
   .set("view engine", viewEngine)
   .set("json spaces", 2);
@@ -27,6 +29,7 @@ app
 
 app
   .use("/", publicRoutes)
+  .use("/", redirectRoutes)
   .use("*", (req, res) => {
     res
       .status(404)

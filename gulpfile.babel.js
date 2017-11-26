@@ -18,7 +18,10 @@ import { dirs } from "./src/config";
 */
 
 gulp.task("babel", () => {
-  return gulp.src(`${dirs.src.root}/**/*.js`)
+  return gulp.src([
+      `${dirs.src.root}/**/*.js`, 
+      `!${dirs.src.assets}/**/*.js`
+    ])
     .pipe(babel({
       presets: ["env"]
     }))
