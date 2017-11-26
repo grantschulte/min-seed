@@ -1,5 +1,5 @@
 import log from "winston";
-import { config } from "../config";
+import { config, isDev } from "../config";
 
 log.cli();
 
@@ -9,9 +9,12 @@ function logServerConfig(err) {
   }
 
   const url = ["http://", config.host, ":", config.port].join("");
+  const env = isDev
+    ? "development"
+    : process.env.NODE_ENV;
 
   log.info("==========================================");
-  log.info("Environment:", config.env);
+  log.info("Environment:", env);
   log.info("Listening at:", url);
   log.info("==========================================");
 }

@@ -1,4 +1,4 @@
-import { config } from "../config";
+import { isDev } from "../config";
 
 function log(err, req, res, next) {
   console.error(err.stack);
@@ -6,9 +6,9 @@ function log(err, req, res, next) {
 }
 
 function server(err, req, res, next) {
-  err = config.env === "production"
-    ? {}
-    : err;
+  err = isDev
+    ? err
+    : {};
 
   res.status(500);
   res.render("error", {

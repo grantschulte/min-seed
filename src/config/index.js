@@ -4,18 +4,21 @@ import wpConfig from "./wp-config";
 
 dotenv.load();
 
+
+const rootDir = process.cwd();
+const viewEngine = "pug";
+
 const config = {
-  env:  process.env.NODE_ENV,
+  env: process.env.NODE_ENV,
   host: process.env.SERVER_HOST,
   port: process.env.SERVER_PORT
 };
 
-if (process.env.NODE_ENV === "test") {
-  config.env = "test";
-  config.port = 3001;
-}
+const isDev = (config.env !== "production" && config.env !== "test");
 
-const rootDir = process.cwd();
+if (config.env === "test") {
+  config.port = "3001";
+}
 
 const dirs = {
   root: rootDir,
@@ -34,11 +37,10 @@ const dirs = {
   bin:  path.join(rootDir, "bin")
 };
 
-const viewEngine = "pug";
-
 export {
   config,
   dirs,
+  isDev,
   viewEngine,
   wpConfig
 };

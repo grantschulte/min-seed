@@ -6,7 +6,7 @@ npm install
 
 # Build server and assets
 
-npm run build
+npm run build:prod
 
 # Start server
 

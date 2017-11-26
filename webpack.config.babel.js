@@ -14,7 +14,7 @@ module.exports = (env) => {
   // the webpack cli call. At this time, we're using the
   // applications config env variable set by .env:
 
-  const envVars = wpConfig(config.env);
+  const envVars = wpConfig(env);
 
   // Return webpack config object:
 

@@ -1,5 +1,5 @@
 import express from "express";
-import { config } from "../config";
+import { isDev } from "../config";
 import * as controllers from "../controllers";
 
 const router = express.Router();
@@ -8,7 +8,7 @@ router.get("/", controllers.home.get);
 
 // Development Routes
 
-if (config.env === "development") {
+if (isDev) {
   router.get("/styleguide", (req, res) => {
     res.render("pages/styleguide");
   });

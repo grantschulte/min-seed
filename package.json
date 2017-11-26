@@ -4,13 +4,15 @@
   "description": "A minimal Node web app starter with Express, Webpack, and Gulp.",
   "main": "./build/server.js",
   "scripts": {
-    "build": "yarn clean && gulp build && yarn webpack",
+    "build:dev": "yarn clean && gulp build && yarn webpack:dev",
+    "build:prod": "yarn clean && gulp build && yarn webpack:prod",
     "clean": "rm -rf ./build",
     "lint": "./node_modules/.bin/eslint ./src",
-    "start:dev": "yarn build && NODE_ENV=development gulp serve",
+    "start:dev": "yarn build:dev && NODE_ENV=development gulp serve",
     "start:prod": "NODE_ENV=production node ./build/server/server.js",
     "test": "NODE_ENV=test ./node_modules/.bin/mocha --require babel-core/register --exit --colors ./test/**/*.js",
-    "webpack": "./node_modules/.bin/webpack",
+    "webpack:dev": "./node_modules/.bin/webpack --env=development",
+    "webpack:prod": "./node_modules/.bin/webpack --env=production",
     "webpack:watch": "./node_modules/.bin/webpack --watch --env=development"
   },
   "repository": {
