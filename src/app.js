@@ -3,12 +3,13 @@ import morgan from "morgan";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 
-import { dirs, viewEngine, config } from "./config";
+import { dirs, viewEngine, config, isDev } from "./config";
 import { router as publicRoutes } from "./routes/public";
 import { router as redirectRoutes } from "./routes/redirects";
 import * as errors from "./middleware/errors";
 
 const app = express();
+app.locals.isDev = isDev;
 
 app
   .set("port", process.env.PORT || config.port)
