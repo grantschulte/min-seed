@@ -4,8 +4,8 @@ import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 
 import { dirs, viewEngine, config, isDev } from "./config";
-import { router as publicRoutes } from "./routes/public";
-import { router as redirectRoutes } from "./routes/redirects";
+import { router as publicRouter } from "./routes/public";
+import { router as redirectRouter } from "./routes/redirects";
 import * as errors from "./middleware/errors";
 
 const app = express();
@@ -29,8 +29,8 @@ app
 // Routes
 
 app
-  .use("/", publicRoutes)
-  .use("/", redirectRoutes)
+  .use("/", publicRouter)
+  .use("/", redirectRouter)
   .use("*", (req, res) => {
     res
       .status(404)
