@@ -6,7 +6,7 @@
 
 // Fonts
 
-$font-cardo: "Cardo", Georgia, sans-serif;
+$font-work-sans: "Work Sans", Helvetica, sans-serif;
 
 // Colors
 
@@ -14,11 +14,10 @@ $color-black: #000000;
 $color-white: #FFFFFF;
 
 $colors-brand: (
-  primary: #1EA896,
-  secondary: #523F38,
-  accent: #FF715B,
-  warning: red,
-  text: #4C5454
+  primary: blue,
+  secondary: yellow,
+  accent: green,
+  warning: red
 );
 
 $colors-gray: (
@@ -34,7 +33,7 @@ $colors-gray: (
 // Elements
 
 $header-height: 60px;
-$container-width: 100%;
+$container-width: 1080px;
 
 // Responsive
 

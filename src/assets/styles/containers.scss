@@ -6,12 +6,18 @@
   --header-height: $header-height;
   position: relative;
   min-height: calc(100% - var(--header-height));
-  overflow: hidden;
+  padding-bottom: 100px;
 }
 
 .container {
-  padding: 0 1rem;
+  padding: 0 30px;
+  margin: 0 auto;
   max-width: $container-width;
+
+  @media screen and (max-width: $md) {
+    padding: 0 20px;
+    max-width: auto;
+  }
 }
 
 .page-heading {
