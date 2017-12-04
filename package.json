@@ -1,19 +1,19 @@
 {
-  "name": "min-seed",
+  "name": "vegan-city",
   "version": "1.0.0",
-  "description": "A minimal Node web app starter with Express, Webpack, and Gulp.",
+  "description": "Vegan City Website and Web App",
   "main": "./build/server.js",
   "scripts": {
     "build:dev": "yarn clean && gulp build && yarn webpack:dev",
     "build:prod": "yarn clean && gulp build && yarn webpack:prod",
     "clean": "rm -rf ./build",
-    "lint": "./node_modules/.bin/eslint ./src",
+    "lint": "eslint ./src",
     "start:dev": "yarn build:dev && NODE_ENV=development gulp serve",
     "start:prod": "NODE_ENV=production node ./build/server/server.js",
-    "test": "NODE_ENV=test ./node_modules/.bin/mocha --require babel-core/register --exit --colors ./test/**",
-    "webpack:dev": "./node_modules/.bin/webpack --env=development",
-    "webpack:prod": "./node_modules/.bin/webpack --env=production",
-    "webpack:watch": "./node_modules/.bin/webpack --watch --env=development"
+    "test": "NODE_ENV=test mocha --require babel-core/register --exit --colors ./test/**",
+    "webpack:dev": "webpack --env=development",
+    "webpack:prod": "webpack --env=production",
+    "webpack:watch": "webpack --watch --env=development"
   },
   "repository": {
     "type": "git",

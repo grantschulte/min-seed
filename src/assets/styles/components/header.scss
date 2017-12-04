@@ -1,36 +1,89 @@
 #header {
-  background-color: $color-white;
-  height: $header-height;
-  border-bottom: 1px solid #DDD;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding: 0 1rem;
+  background-color: #FFF;
+  z-index: 1;
+  box-shadow: 0 0 3px 1px rgba(0,0,0,0.1);
 
-  .container {
-    height: 100%;
+  #logo {
+    display: inline-block;
+  }
+
+  #logo a {
+    text-decoration: none;
+    color: #4C5454;
+    font-size: 22px;
+    letter-spacing: -1px;
+  }
+}
+
+#header--find {
+  &__search {
+    flex-grow: 2;
     display: flex;
-    flex-flow: wrap;
-    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
   }
 
-  &__logo {
-    margin-right: auto;
-
-    a {
-      color: map-get($colors-gray, 100);
-      font-weight: bold;
-      font-size: 1.25rem;
-      text-decoration: none;
-      letter-spacing: -0.5px;
-    }
+  &__search input {
+    height: 38px;
+    border-radius: 3px;
+    border: 1px solid #DDDDDD;
+    padding: 0 10px;
+    font-size: 14px;
+    font-family: "Cardo", Georgia, serif;
+    width: 100%;
+    transition: 200ms all ease-in-out;
   }
 
-  &__actions {
-    height: 32px;
-    
-    #menu-icon {
-      font-size: 32px;
-    }
+  &__search input:focus,
+  &__search input:active {
+    outline: none;
+    border: 1px solid #BBBBBB;
+    box-shadow: 0 0 2px 1px rgba(0,0,0,0.075);
+  }
 
-    .btn {
-      margin-left: 0.75em;
-    }
+  &__search button {
+    position: absolute;
+    top: 50%;
+    height: auto;
+    margin-top: -12px;
+    right: 10px;
+    padding: 0;
+    font-size: 20px;
+    background: none;
+    border: none;
+    background-color: transparent;
+    -webkit-appearance: none;
+    z-index: 1;
+  }
+
+  &__search button span {
+    color: #4C5454;
+    cursor: pointer;
+    transition: 200ms color ease-in-out;
+  }
+
+  &__search button:active,
+  &__search button:focus {
+    outline: none;
+  }
+
+  &__search button span:hover {
+    color: #1EA896;
+  }
+
+  &__search__input-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  &__menu span {
+    color: #523F38;
+    font-size: 28px;
   }
 }

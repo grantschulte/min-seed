@@ -5,13 +5,6 @@ import * as controllers from "../controllers";
 const router = express.Router();
 
 router.get("/", controllers.home.get);
-
-// Development Routes
-
-if (isDev) {
-  router.get("/styleguide", (req, res) => {
-    res.render("pages/styleguide");
-  });
-}
+router.get("/find", controllers.locator);
 
 export { router };

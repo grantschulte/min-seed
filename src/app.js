@@ -9,6 +9,8 @@ import { router as redirectRouter } from "./routes/redirects";
 import * as errors from "./middleware/errors";
 
 const app = express();
+
+app.locals.googleApiKey = process.env.GOOGLE_MAPS_API_KEY;
 app.locals.isDev = isDev;
 
 app

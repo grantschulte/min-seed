@@ -10,17 +10,19 @@ body {
   padding: 0;
   margin: 0;
   font-size: 14px;
-  font-family: $font-work-sans;
+  font-family: $font-cardo;
+  color: map-get($colors-brand, text);
   height: 100%;
 }
 
 a {
-  color: #00B7FF;
+  color: map-get($colors-brand, primary);
   text-transform: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
-  font-family: $font-work-sans;
-  color: map-get($colors-gray, 100);
+  font-weight: normal;
+  font-family: $font-cardo;
+  color: map-get($colors-brand, text);
 }

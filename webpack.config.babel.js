@@ -22,6 +22,9 @@ module.exports = (env) => {
     entry: {
       "app": [
         path.join(dirs.src.assets, "index.js")
+      ],
+      "find": [
+        path.join(dirs.src.assets, "find.js")
       ]
     },
 
